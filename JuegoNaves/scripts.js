@@ -33,3 +33,24 @@ function Player(life, score) {
 
         return player;
     }
+
+    function Shot( x, y, array) {
+            this.posX = x;
+            this.posY = y;
+            this.image = new Image();
+            this.speed = shotSpeed;
+            this.identifier = 0;
+            this.add = function () {
+                array.push(this);
+            };
+            this.deleteShot = function (idendificador) {
+                arrayRemove(array, idendificador);
+            };
+        }
+
+        function PlayerShot (x, y) {
+            Object.getPrototypeOf(PlayerShot.prototype).constructor.call(this, x, y, playerShotsBuffer);
+            this.image.src =  'images/disparo_bueno.png';
+            this.isHittingEvil = function() {
+                return (!evil.dead && this.posX >= evil.posX && this.posX = evil.posY && this.posY = player.posX && this.posX = player.posY && this.posY
+    El comportamiento del bicho malo y del jefe final es una mezcla de los dos casos anterio
